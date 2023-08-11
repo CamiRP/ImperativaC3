@@ -1,0 +1,104 @@
+//ANCHOR --- estructuras de control
+
+//IF 
+// lo uso cuando tengo más de dos caminos (3,4,5)
+// crear una funcion que devuelva los permisos que tiene el usuario
+// user -- poco / admin -- casi completo / superAdmin -- todo
+
+const determinarPermiso = (rolUsuario) => {
+
+    if (rolUsuario === "superAdmin"){
+        return "tiene permiso a todo"
+    }
+
+    else if (rolUsuario === "admin"){
+        return "tiene permiso casi completo"
+    }
+
+    else if (rolUsuario === "user"){
+        return "tiene poco permiso"
+    }
+
+    else {
+        return "no tiene acceso"
+    }
+
+}
+
+let permisos = determinarPermiso ("admin")
+console.log(permisos)
+
+
+
+//TERNARIO
+
+const llevoParaguas = (clima)=> {
+
+    //if (clima === "lluvioso"){
+    //    return "sí, llévalo"
+    //}
+
+    //else {
+    //    return "no, no hace falta"
+    //}
+
+    // ternario, se usa cuando puedo hacer una funcion que tenga una respuesta sí o no
+    // condicion ? verdadero : falso
+
+    let x = clima === "lluvioso" ? "sí, llévalo" : "no, no hace falta"
+    return x
+}
+
+let resultado = llevoParaguas ("soleado")
+console.log(resultado)
+
+// SWITCH --- case
+// tengo muchos caminos como opciones
+
+const determinarImpuesto = (marcaAuto) => {
+
+    let impuesto = 100
+
+    switch (marcaAuto) {
+
+        case "audi":
+            impuesto += 10
+            break
+        case "citroen":
+            impuesto +=20
+            break
+        case "bmw":
+            impuesto +=30
+            break
+        default: 
+            //como el else
+            impuesto =0
+
+    }
+
+    return impuesto
+        
+}
+
+let total = determinarImpuesto ("audi")
+console.log(total)
+
+
+const determinarIngreso = (edad,tieneTicket) => {
+
+    //if (edad > 18 && tieneTicket === true) {
+    //    return "si puede pasar"
+    //}
+
+    //else {
+    //    return "no puede"
+    //}
+
+    return edad > 18 && tieneTicket === true ? "si puede pasar" : "no puede"
+}
+
+let concierto = determinarIngreso (12,true)
+console.log(concierto)
+
+
+// impuesto += 10 es lo mismo que impuesto = impuesto + 10
